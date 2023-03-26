@@ -1,0 +1,119 @@
+.items {
+	display: flex;
+	gap: 30px;
+	& > * {
+		background-color: #fff;
+	}
+}
+
+.cars {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+	flex: 0 0 75%;
+
+	&__head {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__title {
+		font-size: 46px;
+		font-weight: 700;
+	}
+
+	&__select {
+		width: 200px;
+		border-radius: 10px;
+		select {
+			border-radius: 5px;
+		}
+	}
+}
+
+.car {
+	display: flex;
+	gap: 20px;
+	cursor: pointer;
+	position: relative;
+	border: 1px solid #b4afaf8a;
+	color: #1d1d1f;
+
+	// box-shadow: 0px 0px 3px #b4afaf;
+
+	&__link-id {
+		display: flex;
+		gap: 20px;
+		cursor: pointer;
+		color: inherit;
+	}
+
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 10px 0;
+
+		& > * {
+			font-size: 18px;
+		}
+	}
+
+	&__condition {
+	}
+
+	&__miles {
+	}
+
+	&__name {
+		font-weight: 700;
+	}
+
+	&__price {
+		font-size: 26px;
+		font-weight: 700;
+	}
+
+	&__save {
+		display: flex;
+		align-items: flex-end;
+		gap: 5px;
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+		&__btn {
+			width: 20px;
+			height: 20px;
+			color: #a9a7a7;
+			&:active {
+				color: #b0c;
+			}
+		}
+	}
+	&__remove {
+		position: absolute;
+		right: 10px;
+		top: 10px;
+		cursor: pointer;
+		.remove-btn {
+			padding: 5px;
+			border: 1px solid #a9a7a7;
+			border-radius: 50%;
+			width: 35px;
+			height: 35px;
+		}
+	}
+}
+
+.car__save:hover {
+	color: #b0c;
+	.car__save__btn {
+		color: #b0c;
+	}
+}
+.saved-car {
+	color: #b0c;
+}

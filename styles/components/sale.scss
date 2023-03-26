@@ -1,0 +1,77 @@
+.sale {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 20px;
+	padding: 20px;
+	background-color: #fff;
+	form {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		// align-items: center;
+		gap: 40px;
+		label {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			gap: 50px;
+			width: 100%;
+			font-size: 18px;
+			color: #8a8383;
+			input {
+				margin-right: 200px;
+				width: 100px;
+				padding: 10px;
+				font-size: 18px;
+				border-radius: 5px;
+				border: 1px solid #ccc;
+			}
+		}
+		button {
+			padding: 15px;
+			font-size: 20px;
+			font-weight: 500;
+			color: #fff;
+			border-radius: 10px;
+			background-color: purple;
+		}
+	}
+
+	&__title {
+		font-size: 46px;
+		font-weight: 700;
+	}
+
+	&__car {
+	}
+}
+
+.car-block {
+	display: flex;
+	flex-direction: column;
+	gap: 25px;
+	h3 {
+		font-size: 24px;
+		font-weight: 700;
+	}
+}
+
+.sale-select {
+	label {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 50px;
+		width: 100%;
+		font-size: 18px;
+		color: #8a8383;
+		select {
+			width: 300px;
+			padding: 10px;
+			font-size: 18px;
+			border-radius: 5px;
+			border: 1px solid #ccc;
+		}
+	}
+}

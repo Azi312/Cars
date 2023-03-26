@@ -1,0 +1,110 @@
+.sidebar {
+	padding: 15px;
+	display: flex;
+	flex-direction: column;
+	flex: 0 0 25%;
+	gap: 10px;
+	&__selects {
+		display: flex;
+		flex-direction: column;
+		border: 1px solid #ccc;
+		border-radius: 10px;
+		.select-block {
+			width: 100%;
+
+			&__select-1 {
+				border: none;
+				border-radius: 10px 10px 0 0;
+			}
+			&__select-2 {
+				border: none;
+				border-top: 1px solid #ccc;
+				border-bottom: 1px solid #ccc;
+			}
+			&__select-3 {
+				border: none;
+				border-radius: 0 0 10px 10px;
+			}
+		}
+	}
+
+	&__selects-2 {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		gap: 10px;
+		.select-block {
+			flex: 0 0 48%;
+			border-radius: 10px;
+			select {
+				border-radius: 10px;
+			}
+		}
+	}
+
+	&__checkbox {
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		padding: 10px;
+
+		label {
+			display: flex;
+			align-items: center;
+		}
+	}
+
+	.styled-checkbox {
+		position: absolute;
+		opacity: 0;
+
+		& + label {
+			position: relative;
+			cursor: pointer;
+			padding: 0;
+			span {
+				margin: 0 0 0 20px;
+				font-size: 17px;
+			}
+		}
+
+		// Box.
+		& + label:before {
+			margin-top: -5.5px;
+			content: '';
+			display: inline-block;
+			vertical-align: text-top;
+			width: 22px;
+			height: 22px;
+			background: white;
+			border: 1px solid rgba(0, 0, 0, 0.1);
+			border: 1px solid #a9a7a7;
+			border-radius: 8px;
+		}
+
+		// Box hover
+		&:hover + label:before {
+			background: #f9f9f9;
+		}
+
+		// Box checked
+		&:checked + label:before {
+			background: #403ec0;
+		}
+
+		// Checkmark. Could be replaced with an image
+		&:checked + label:after {
+			margin-top: -5.9px;
+			content: '';
+			position: absolute;
+			left: 6px;
+			top: 11px;
+			background: white;
+			width: 2px;
+			height: 2px;
+			box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white,
+				4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+			transform: rotate(45deg);
+		}
+	}
+}

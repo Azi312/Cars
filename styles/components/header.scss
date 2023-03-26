@@ -1,0 +1,131 @@
+[class*='_container'] {
+	max-width: 1340px;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	padding: 0px 0;
+	margin: 0 0 30px 0;
+	position: sticky;
+	top: 0;
+	right: 0;
+	z-index: 2;
+	width: 100%;
+	background-color: #fff;
+	box-shadow: 0px 0px 3px #b4afaf;
+
+	&__body {
+		display: flex;
+		text-align: center;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		cursor: pointer;
+	}
+
+	// &__menu-burger {
+	// 	display: flex;
+	// 	align-items: center;
+
+	// 	button {
+	// 		margin-top: 10px;
+	// 		padding: 10px 25px;
+	// 		font-size: 20px;
+	// 		color: #6e6b6b;
+	// 		transition: all 0.3s ease 0s;
+	// 		background-color: #fff;
+	// 		// border-right: 1px solid #ccc;
+	// 		cursor: pointer;
+	// 		transition: all 0.3s ease 0s;
+	// 		&:hover {
+	// 			background-color: #403ec0;
+	// 			color: #fff;
+	// 		}
+	// 	}
+	// }
+}
+
+.menu-burger {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16px;
+
+	span {
+		font-size: 22px;
+		margin-top: 17px;
+		cursor: pointer;
+	}
+
+	&__icon {
+		width: 28px;
+		height: 28px;
+		margin-top: 15px;
+		cursor: pointer;
+	}
+
+	&__list {
+		background-color: #fff;
+		padding: 30px;
+		width: 210px;
+		height: 200px;
+		position: absolute;
+		top: 80px;
+		right: -60px;
+		border-radius: 20px;
+		border: 1px solid #b4afaf;
+		box-shadow: 0px 0px 3px #b4afaf;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 30px;
+		font-size: 18px;
+
+		h3 {
+			font-size: 18px;
+			padding: 0 0 10px;
+			color: #1d1d1f;
+			font-weight: 700;
+		}
+	}
+
+	&__saved {
+		display: flex;
+		align-items: flex-end;
+		gap: 5px;
+		color: #1d1d1f;
+		&:hover {
+			color: #532380;
+			text-decoration: underline;
+		}
+	}
+	&__saved-icon {
+		width: 20px;
+		height: 20px;
+	}
+
+	&__login {
+		display: flex;
+		align-items: flex-end;
+		gap: 5px;
+		// font-size: 20px;
+		color: #1d1d1f;
+		transition: all 0.3s ease 0s;
+		cursor: pointer;
+		position: relative;
+
+		&:hover {
+			color: #532380;
+			text-decoration: underline;
+		}
+
+		.login-icon {
+			width: 22px;
+			height: 22px;
+		}
+	}
+}

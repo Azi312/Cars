@@ -1,0 +1,52 @@
+.poster {
+	position: relative;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 80%;
+	height: 366px;
+	text-align: center;
+
+	Image {
+		width: 100%;
+		height: 100%;
+	}
+}
+
+.poster:hover {
+	.slide {
+		&__prev {
+			opacity: 1;
+		}
+		&__next {
+			opacity: 1;
+		}
+	}
+}
+
+.slide {
+	&__prev {
+		position: absolute;
+		left: 0;
+		top: 45%;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		opacity: 0;
+		cursor: pointer;
+		color: #fff;
+		background-color: #000000a9;
+	}
+	&__next {
+		position: absolute;
+		right: 0;
+		top: 45%;
+		width: 50px;
+		height: 50px;
+		z-index: 1;
+		opacity: 0;
+		cursor: pointer;
+		color: #fff;
+		background-color: #000000a9;
+	}
+}
