@@ -39,6 +39,9 @@ export const itemsSlice = createSlice({
 		setSavedItems(state, action) {
 			state.savedItems = action.payload
 		},
+		removeAllSavedItems(state) {
+			state.savedItems = []
+		},
 		removeSavedItems(state, action: PayloadAction<number>) {
 			state.savedItems = state.savedItems.filter(
 				item => item.id !== action.payload
@@ -48,5 +51,10 @@ export const itemsSlice = createSlice({
 })
 
 export const selectItemsSlice = (state: RootState) => state.items
-export const { setItems, setSavedItems, removeSavedItems } = itemsSlice.actions
+export const {
+	setItems,
+	setSavedItems,
+	removeSavedItems,
+	removeAllSavedItems,
+} = itemsSlice.actions
 export default itemsSlice.reducer

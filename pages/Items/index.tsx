@@ -1,11 +1,11 @@
-import { FC } from 'react'
 import axios from 'axios'
 import Head from 'next/head'
+import { FC } from 'react'
 
 import Cars from '@/components/Cars'
 import Sidebar from '@/components/Sidebar'
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
 	const res = await axios.get(`http://localhost:3001/items`)
 	const data = await res.data
 

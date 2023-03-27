@@ -10,7 +10,7 @@ import axios from 'axios'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Saved = () => {
@@ -30,6 +30,13 @@ const Saved = () => {
 			})
 	}, [sort])
 
+	// const removeAllCars = () => {
+	// 	if (window.confirm('Are you sure, you want to remove all the cars?')) {
+	// 		axios.delete(`http://localhost:3001/savedItems/?id_ne=0`)
+	// 		dispatch(removeAllSavedItems())
+	// 	}
+	// }
+
 	return (
 		<>
 			<Head>
@@ -42,11 +49,8 @@ const Saved = () => {
 				<h1 className='saved__title'>Saved cars</h1>
 				{savedItems.length ? (
 					<div className='saved__content content'>
-						<div className='content__title'>
-							<h3>Listed</h3>
-						</div>
 						<div className='saved__actions actions'>
-							<div className='actions__remove'>Remove all listed cars</div>
+							<div className='actions__title'>Listed cars</div>
 							<div className='actions__select'>
 								<Sort />
 							</div>
@@ -61,7 +65,7 @@ const Saved = () => {
 					<div className='saved__empty saved-empty'>
 						<div className='saved-empty__content'>
 							<div className='saved-empty__text'>
-								You have not saved car yet((
+								You have not saved a car yet((
 							</div>
 							<Link href='/Items' className='saved-empty__btn'>
 								Shop for cars
