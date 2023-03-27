@@ -1,11 +1,10 @@
-import { useEffect, useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { selectSearchSlice } from '@/redux/slices/searchSlice'
-import Link from 'next/link'
-import axios from 'axios'
-import Sort from './UI/select/Sort'
-import Car from './Car'
 import { selectItemsSlice, setItems } from '@/redux/slices/itemsSlice'
+import { selectSearchSlice } from '@/redux/slices/searchSlice'
+import axios from 'axios'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import Car from './Car'
+import Sort from './UI/select/Sort'
 
 type Items = {
 	mileage: number

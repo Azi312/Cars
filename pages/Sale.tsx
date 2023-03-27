@@ -11,7 +11,7 @@ import {
 import { useAuth } from '@/hooks/use-auth'
 import axios from 'axios'
 import Head from 'next/head'
-import React, { FC, useState } from 'react'
+import { FC, useState } from 'react'
 
 export async function getServerSideProps() {
 	const res = await axios.get(`http://localhost:3001/items`)
@@ -297,7 +297,10 @@ const Sale: FC<SaleProps> = ({ items }) => {
 						<button type='submit'>Publish</button>
 					</form>
 				) : (
-					<h2>Not auth</h2>
+					<h2 className='sale__notAuth'>
+						You are not logged in. Adding is possible only for registered
+						members
+					</h2>
 				)}
 			</div>
 		</>

@@ -5,11 +5,15 @@
 	gap: 20px;
 	padding: 20px;
 	background-color: #fff;
+
+	&__notAuth {
+		font-size: 22px;
+	}
+
 	form {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
-		// align-items: center;
 		gap: 40px;
 		label {
 			display: flex;
