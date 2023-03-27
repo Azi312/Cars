@@ -1,30 +1,30 @@
+import { useAuth } from '@/hooks/use-auth'
+import { selectItemsSlice } from '@/redux/slices/itemsSlice'
+import { removeUser } from '@/redux/slices/userSlice'
+import {
+	ArrowLeftOnRectangleIcon,
+	ArrowRightOnRectangleIcon,
+	Bars3Icon,
+	HeartIcon,
+	XMarkIcon,
+} from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
-import { removeUser } from '@/redux/slices/userSlice'
+import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useAuth } from '@/hooks/use-auth'
-import {
-	HeartIcon,
-	Bars3Icon,
-	XMarkIcon,
-	ArrowRightOnRectangleIcon,
-	ArrowLeftOnRectangleIcon,
-} from '@heroicons/react/24/outline'
-import { selectItemsSlice } from '@/redux/slices/itemsSlice'
 
 const Header = () => {
 	const [open, setOpen] = useState(false)
 
 	const { savedItems } = useSelector(selectItemsSlice)
-
 	const dispatch = useDispatch()
+
 	const { isAuth, email } = useAuth()
 
 	return (
 		<header className='header'>
 			<div className='header__container'>
-				<div onClick={e => e.stopPropagation()} className='header__body'>
+				<div className='header__body'>
 					<Link href='/' className='header__logo'>
 						<Image src='/logo.png' alt='logo' width={80} height={80} />
 					</Link>
