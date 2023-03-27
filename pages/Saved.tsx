@@ -30,13 +30,6 @@ const Saved = () => {
 			})
 	}, [sort])
 
-	// const removeAllCars = () => {
-	// 	if (window.confirm('Are you sure, you want to remove all the cars?')) {
-	// 		axios.delete(`http://localhost:3001/savedItems/?id_ne=0`)
-	// 		dispatch(removeAllSavedItems())
-	// 	}
-	// }
-
 	return (
 		<>
 			<Head>

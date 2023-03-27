@@ -6,10 +6,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import Car from './Car'
 import Sort from './UI/select/Sort'
 
-// type Items = {
-// 	mileage: number
-// }
-
 const Cars = () => {
 	const { items } = useSelector(selectItemsSlice)
 	const dispatch = useDispatch()

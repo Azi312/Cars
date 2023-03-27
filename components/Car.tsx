@@ -1,5 +1,6 @@
 // import { HeartIcon } from '@heroicons/react/24/outline'
 import { selectItemsSlice } from '@/redux/slices/itemsSlice'
+import { MapPinIcon } from '@heroicons/react/24/outline'
 import { HeartIcon } from '@heroicons/react/24/solid'
 import axios from 'axios'
 import Image from 'next/image'
@@ -78,14 +79,23 @@ const Car: FC<CarProps> = ({
 					/>
 				</div>
 				<div className='car__content'>
-					<div className='car__condition'>{mileage <= 0 ? 'New' : 'Used'}</div>
-					<div className='car__name'>
-						{year} {name} {model}
+					<div className='car__header'>
+						<div className='car__condition'>
+							{mileage <= 0 ? 'New' : 'Used'}
+						</div>
+						<div className='car__name'>
+							{year} {name} {model}
+						</div>
+						{mileage > 0 && <div className='car__miles'>mi. {mileage}</div>}
+						<div className='car__price'>{price}$</div>
 					</div>
-					{mileage > 0 && <div className='car__miles'>mi. {mileage}</div>}
-					<div className='car__price'>{price}$</div>
-
-					<div className=''>{new Date().toLocaleString()}</div>
+					<div className='car__footer'>
+						<div className='car__location'>
+							<MapPinIcon style={{ width: '20px', height: '20px' }} />
+							{location}
+						</div>
+						<div className=''>{new Date().toLocaleString()}</div>
+					</div>
 				</div>
 			</Link>
 			<div onClick={saveCar} className='car__save'>

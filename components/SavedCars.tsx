@@ -1,10 +1,10 @@
-import { TrashIcon } from '@heroicons/react/24/outline'
-import React, { FC } from 'react'
-import Image from 'next/image'
-import axios from 'axios'
-import { useDispatch } from 'react-redux'
 import { removeSavedItems } from '@/redux/slices/itemsSlice'
+import { MapPinIcon, TrashIcon } from '@heroicons/react/24/outline'
+import axios from 'axios'
+import Image from 'next/image'
 import Link from 'next/link'
+import { FC } from 'react'
+import { useDispatch } from 'react-redux'
 
 type SavedCarsProps = {
 	id: number
@@ -13,6 +13,7 @@ type SavedCarsProps = {
 	year: number
 	mileage: number
 	price: number
+	location: string
 	images: string[]
 }
 
@@ -23,6 +24,7 @@ const SavedCars: FC<SavedCarsProps> = ({
 	year,
 	mileage,
 	price,
+	location,
 	images,
 }) => {
 	const dispatch = useDispatch()
@@ -47,14 +49,23 @@ const SavedCars: FC<SavedCarsProps> = ({
 					/>
 				</div>
 				<div className='car__content'>
-					<div className='car__condition'>{mileage <= 0 ? 'New' : 'Used'}</div>
-					<div className='car__name'>
-						{year} {name} {model}
+					<div className='car__header'>
+						<div className='car__condition'>
+							{mileage <= 0 ? 'New' : 'Used'}
+						</div>
+						<div className='car__name'>
+							{year} {name} {model}
+						</div>
+						{mileage > 0 && <div className='car__miles'>mi. {mileage}</div>}
+						<div className='car__price'>{price}$</div>
 					</div>
-					{mileage > 0 && <div className='car__miles'>mi. {mileage}</div>}
-					<div className='car__price'>{price}$</div>
-
-					<div className=''>{new Date().toLocaleString()}</div>
+					<div className='car__footer'>
+						<div className='car__location'>
+							<MapPinIcon style={{ width: '20px', height: '20px' }} />
+							{location}
+						</div>
+						<div className=''>{new Date().toLocaleString()}</div>
+					</div>
 				</div>
 			</Link>
 			<div className='car__remove' onClick={removeSavedCar}>

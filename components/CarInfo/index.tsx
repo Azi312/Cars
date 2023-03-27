@@ -1,15 +1,14 @@
-import { Items } from '@/pages/Items/[id]'
-import React, { FC } from 'react'
-import CarInfoSlider from './CarInfoSlider'
+import { FC } from 'react'
 import styles from './CarInfo.module.scss'
+import CarInfoSlider from './CarInfoSlider'
 
 import { MapPinIcon } from '@heroicons/react/24/outline'
 import { HeartIcon } from '@heroicons/react/24/solid'
 
+import { Items, selectItemsSlice } from '@/redux/slices/itemsSlice'
+import axios from 'axios'
 import { Roboto } from 'next/font/google'
 import { useSelector } from 'react-redux'
-import { selectItemsSlice } from '@/redux/slices/itemsSlice'
-import axios from 'axios'
 const roboto = Roboto({ subsets: ['latin'], weight: ['400', '500', '700'] })
 
 const subject = [
