@@ -1,4 +1,4 @@
-import { selectItemsSlice, setItems } from '@/redux/slices/itemsSlice'
+import { Items, selectItemsSlice, setItems } from '@/redux/slices/itemsSlice'
 import { selectSearchSlice } from '@/redux/slices/searchSlice'
 import axios from 'axios'
 import { useEffect } from 'react'
@@ -6,9 +6,9 @@ import { useDispatch, useSelector } from 'react-redux'
 import Car from './Car'
 import Sort from './UI/select/Sort'
 
-type Items = {
-	mileage: number
-}
+// type Items = {
+// 	mileage: number
+// }
 
 const Cars = () => {
 	const { items } = useSelector(selectItemsSlice)
@@ -65,8 +65,8 @@ const Cars = () => {
 				</h1>
 				<Sort />
 			</div>
-			{items.map((item: any) => (
-				<Car key={item.id} item={item} {...item} />
+			{items.map((item: Items) => (
+				<Car key={item.id} {...item} />
 			))}
 		</div>
 	)

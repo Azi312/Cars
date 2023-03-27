@@ -4,7 +4,7 @@ import { HeartIcon } from '@heroicons/react/24/solid'
 import axios from 'axios'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { FC, useState } from 'react'
+import { FC } from 'react'
 import { useSelector } from 'react-redux'
 
 type CarProps = {
