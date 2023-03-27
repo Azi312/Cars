@@ -4,7 +4,6 @@
 	"private": true,
 	"scripts": {
 		"serve": "concurrently \"npm run server\" \"npm run dev\"",
-		"servers": "concurrently \"npm run server\" \"npm run start\"",
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
