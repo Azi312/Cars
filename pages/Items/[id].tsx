@@ -1,6 +1,6 @@
 import CarInfo from '@/components/CarInfo'
 import axios from 'axios'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 export const getServerSideProps = async (context: any) => {
 	const id = context.params.id
