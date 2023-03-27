@@ -61,7 +61,7 @@ const Cars = () => {
 		<div className='cars'>
 			<div className='cars__head'>
 				<h1 className='cars__title'>
-					{condition === '' ? 'New and Used' : condition} vehicles for sale
+					{!condition ? 'New and Used' : condition} vehicles for sale
 				</h1>
 				<Sort />
 			</div>

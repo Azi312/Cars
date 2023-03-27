@@ -31,16 +31,17 @@
 	h3 {
 		color: #807f85;
 	}
-	button {
-		padding: 15px 20px;
-		font-size: 18px;
-		font-weight: 700;
-		border-radius: 10px;
-		color: #fff;
-		background-color: #4f2fda;
-		transition: all 0.3s ease 0s;
-		&:hover {
-			background-color: #301d84;
-		}
+}
+
+.link {
+	padding: 15px 20px;
+	font-size: 18px;
+	font-weight: 700;
+	border-radius: 10px;
+	color: #fff;
+	background-color: #4f2fda;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		background-color: #301d84;
 	}
 }
