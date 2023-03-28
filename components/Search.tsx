@@ -1,14 +1,14 @@
-import React, { FC, useState } from 'react'
-import Link from 'next/link'
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
-import { useDispatch } from 'react-redux'
 import {
-	setName,
-	setModel,
+	setCondition,
 	setMaxPrice,
 	setMiles,
-	setCondition,
+	setModel,
+	setName,
 } from '@/redux/slices/searchSlice'
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import Link from 'next/link'
+import { FC, useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { carsNames, distances, prices, use } from './arrays'
 
 interface Items {
@@ -113,7 +113,7 @@ const Search: FC<SelectsProps> = ({ items }) => {
 								No max price
 							</option>
 							{prices.map(value => (
-								<option value={value}>{value}</option>
+								<option value={value}>${value}</option>
 							))}
 						</select>
 						<label htmlFor='Price'>Price</label>

@@ -18,16 +18,23 @@ const Saved = () => {
 	const { sort } = useSelector(selectSearchSlice)
 	const dispatch = useDispatch()
 
-	useEffect(() => {
+	const fetchSavedCars = async () => {
 		const sortById = sort.replace('-', '')
 		const order = sort.includes('-') ? 'asc' : 'desc'
 
-		axios
-			.get(`http://localhost:3001/savedItems?_sort=${sortById}&_order=${order}`)
+		try {
+			const { data } = await axios.get(
+				`http://localhost:3001/savedItems?_sort=${sortById}&_order=${order}`
+			)
+			dispatch(setSavedItems(data))
+		} catch (error) {
+			console.log('Error', error)
+			alert('Error to get saved cars')
+		}
+	}
 
-			.then(res => {
-				dispatch(setSavedItems(res.data))
-			})
+	useEffect(() => {
+		fetchSavedCars()
 	}, [sort])
 
 	return (

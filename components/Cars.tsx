@@ -22,7 +22,7 @@ const Cars = () => {
 		sort,
 	} = useSelector(selectSearchSlice)
 
-	useEffect(() => {
+	const fetchCars = async () => {
 		const names = name ? `&name=${name}` : ''
 		const models = model ? `&model=${model}` : ''
 		const mileage = miles ? `&mileage_gte=${miles}` : ''
@@ -34,13 +34,19 @@ const Cars = () => {
 		const sortById = sort.replace('-', '')
 		const order = sort.includes('-') ? 'asc' : 'desc'
 
-		axios
-			.get(
+		try {
+			const { data } = await axios.get(
 				`http://localhost:3001/items?${conditions}${names}${models}${mileage}${oldestYear}${newestYear}${lowestPrice}${highestPrice}&_sort=${sortById}&_order=${order}`
 			)
-			.then(res => {
-				dispatch(setItems(res.data))
-			})
+			dispatch(setItems(data))
+		} catch (error) {
+			console.log('Error', error)
+			alert('Error to get cars')
+		}
+	}
+
+	useEffect(() => {
+		fetchCars()
 	}, [
 		name,
 		model,
