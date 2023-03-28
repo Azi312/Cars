@@ -1,15 +1,11 @@
-import { Items, selectItemsSlice, setItems } from '@/redux/slices/itemsSlice'
+import { allCars } from '@/redux/allCars/allCars'
+import { Items } from '@/redux/slices/saveItemsSlice'
 import { selectSearchSlice } from '@/redux/slices/searchSlice'
-import axios from 'axios'
-import { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 import Car from './Car'
 import Sort from './UI/select/Sort'
 
 const Cars = () => {
-	const { items } = useSelector(selectItemsSlice)
-	const dispatch = useDispatch()
-
 	const {
 		name,
 		model,
@@ -22,42 +18,29 @@ const Cars = () => {
 		sort,
 	} = useSelector(selectSearchSlice)
 
-	const fetchCars = async () => {
-		const names = name ? `&name=${name}` : ''
-		const models = model ? `&model=${model}` : ''
-		const mileage = miles ? `&mileage_gte=${miles}` : ''
-		const conditions = condition ? `condition=${condition}` : ''
-		const oldestYear = minYear ? `&year_gte=${minYear}` : ''
-		const newestYear = maxYear ? `&year_lte=${maxYear}` : ''
-		const lowestPrice = minPrice ? `&price_gte=${minPrice}` : ''
-		const highestPrice = maxPrice ? `&price_lte=${maxPrice}` : ''
-		const sortById = sort.replace('-', '')
-		const order = sort.includes('-') ? 'asc' : 'desc'
+	const names = name ? `&name=${name}` : ''
+	const models = model ? `&model=${model}` : ''
+	const mileage = miles ? `&mileage_gte=${miles}` : ''
+	const conditions = condition ? `condition=${condition}` : ''
+	const oldestYear = minYear ? `&year_gte=${minYear}` : ''
+	const newestYear = maxYear ? `&year_lte=${maxYear}` : ''
+	const lowestPrice = minPrice ? `&price_gte=${minPrice}` : ''
+	const highestPrice = maxPrice ? `&price_lte=${maxPrice}` : ''
+	const sortById = sort.replace('-', '')
+	const order = sort.includes('-') ? 'asc' : 'desc'
 
-		try {
-			const { data } = await axios.get(
-				`http://localhost:3001/items?${conditions}${names}${models}${mileage}${oldestYear}${newestYear}${lowestPrice}${highestPrice}&_sort=${sortById}&_order=${order}`
-			)
-			dispatch(setItems(data))
-		} catch (error) {
-			console.log('Error', error)
-			alert('Error to get cars')
-		}
-	}
-
-	useEffect(() => {
-		fetchCars()
-	}, [
-		name,
-		model,
-		miles,
-		condition,
-		minYear,
-		maxYear,
-		minPrice,
-		maxPrice,
-		sort,
-	])
+	const { data: items, error } = allCars.useGetItemsQuery({
+		names,
+		models,
+		mileage,
+		conditions,
+		oldestYear,
+		newestYear,
+		lowestPrice,
+		highestPrice,
+		sortById,
+		order,
+	})
 
 	return (
 		<div className='cars'>
@@ -67,7 +50,7 @@ const Cars = () => {
 				</h1>
 				<Sort />
 			</div>
-			{items.map((item: Items) => (
+			{items?.map((item: Items) => (
 				<Car key={item.id} {...item} />
 			))}
 		</div>

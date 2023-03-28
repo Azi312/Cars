@@ -1,5 +1,5 @@
 import { useAuth } from '@/hooks/use-auth'
-import { selectItemsSlice } from '@/redux/slices/itemsSlice'
+import { selectItemsSlice } from '@/redux/slices/saveItemsSlice'
 import { removeUser } from '@/redux/slices/userSlice'
 import {
 	ArrowLeftOnRectangleIcon,

@@ -1,10 +1,9 @@
-import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
 import {
-	setMinYear,
-	setMaxYear,
 	selectSearchSlice,
+	setMaxYear,
+	setMinYear,
 } from '@/redux/slices/searchSlice'
+import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
 import { useDispatch, useSelector } from 'react-redux'
 
 const years = [2023, 2022, 2021, 2020, 2019]

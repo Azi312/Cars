@@ -1,11 +1,10 @@
 import { carsNames } from '@/components/arrays'
-import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
 import {
-	setName,
-	setModel,
 	selectSearchSlice,
+	setModel,
+	setName,
 } from '@/redux/slices/searchSlice'
+import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Makes = () => {

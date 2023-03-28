@@ -1,5 +1,5 @@
 import CarInfo from '@/components/CarInfo'
-import { Items } from '@/redux/slices/itemsSlice'
+import { Items } from '@/redux/slices/saveItemsSlice'
 import axios from 'axios'
 import { FC } from 'react'
 

@@ -1,15 +1,14 @@
 import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
 
-import { useDispatch, useSelector } from 'react-redux'
 import { selectSearchSlice, setSort } from '@/redux/slices/searchSlice'
+import { useDispatch, useSelector } from 'react-redux'
 
 const sortBy = [
 	{ name: 'Lowest price', sortProperty: '-price' },
 	{ name: 'Highest price', sortProperty: 'price' },
 	{ name: 'Lowest mileage', sortProperty: '-mileage' },
 	{ name: 'Highest mileage', sortProperty: 'mileage' },
-	{ name: 'Oldest yaer', sortProperty: '-year' },
+	{ name: 'Oldest year', sortProperty: '-year' },
 	{ name: 'Newest year', sortProperty: 'year' },
 ]
 

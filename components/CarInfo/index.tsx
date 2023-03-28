@@ -5,7 +5,7 @@ import CarInfoSlider from './CarInfoSlider'
 import { MapPinIcon } from '@heroicons/react/24/outline'
 import { HeartIcon } from '@heroicons/react/24/solid'
 
-import { Items, selectItemsSlice } from '@/redux/slices/itemsSlice'
+import { Items, selectItemsSlice } from '@/redux/slices/saveItemsSlice'
 import axios from 'axios'
 import { Roboto } from 'next/font/google'
 import { useSelector } from 'react-redux'

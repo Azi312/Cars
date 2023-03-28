@@ -1,4 +1,4 @@
-import { removeSavedItems } from '@/redux/slices/itemsSlice'
+import { removeSavedItems } from '@/redux/slices/saveItemsSlice'
 import { MapPinIcon, TrashIcon } from '@heroicons/react/24/outline'
 import axios from 'axios'
 import Image from 'next/image'

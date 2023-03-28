@@ -1,5 +1,5 @@
 // import { HeartIcon } from '@heroicons/react/24/outline'
-import { selectItemsSlice } from '@/redux/slices/itemsSlice'
+import { selectItemsSlice } from '@/redux/slices/saveItemsSlice'
 import { MapPinIcon } from '@heroicons/react/24/outline'
 import { HeartIcon } from '@heroicons/react/24/solid'
 import axios from 'axios'

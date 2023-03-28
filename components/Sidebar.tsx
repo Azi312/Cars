@@ -1,11 +1,11 @@
-import React, { FC } from 'react'
+import { FC } from 'react'
 
-import NewAndUsed from './UI/select/sidebar/NewAndUsed'
-import Miles from './UI/select/sidebar/Miles'
-import Makes from './UI/select/sidebar/Makes'
-import Models from './UI/select/sidebar/Models'
-import Years from './UI/select/sidebar/Years'
-import Prices from './UI/select/sidebar/Prices'
+import Makes from './UI/sidebar/Makes'
+import Miles from './UI/sidebar/Miles'
+import Models from './UI/sidebar/Models'
+import NewAndUsed from './UI/sidebar/NewAndUsed'
+import Prices from './UI/sidebar/Prices'
+import Years from './UI/sidebar/Years'
 
 interface Items {
 	id: number

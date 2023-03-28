@@ -1,9 +1,5 @@
-import React, { FC } from 'react'
-import {
-	setName,
-	setModel,
-	selectSearchSlice,
-} from '@/redux/slices/searchSlice'
+import { selectSearchSlice, setModel } from '@/redux/slices/searchSlice'
+import { FC } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
 interface Items {

@@ -118,6 +118,7 @@ const Search: FC<SelectsProps> = ({ items }) => {
 						</select>
 						<label htmlFor='Price'>Price</label>
 					</div>
+
 					<div className='select-block'>
 						<ChevronDownIcon className='select-block__icon' />
 						<select

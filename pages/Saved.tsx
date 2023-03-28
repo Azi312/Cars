@@ -4,7 +4,7 @@ import {
 	Items,
 	selectItemsSlice,
 	setSavedItems,
-} from '@/redux/slices/itemsSlice'
+} from '@/redux/slices/saveItemsSlice'
 import { selectSearchSlice } from '@/redux/slices/searchSlice'
 import axios from 'axios'
 import Head from 'next/head'

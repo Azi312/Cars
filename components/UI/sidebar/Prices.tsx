@@ -1,11 +1,10 @@
 import { prices } from '@/components/arrays'
-import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
 import {
-	setMinPrice,
-	setMaxPrice,
 	selectSearchSlice,
+	setMaxPrice,
+	setMinPrice,
 } from '@/redux/slices/searchSlice'
+import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Prices = () => {

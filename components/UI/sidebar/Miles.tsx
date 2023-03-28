@@ -1,7 +1,6 @@
 import { distances } from '@/components/arrays'
+import { selectSearchSlice, setMiles } from '@/redux/slices/searchSlice'
 import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
-import { setMiles, selectSearchSlice } from '@/redux/slices/searchSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Miles = () => {

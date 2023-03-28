@@ -1,8 +1,7 @@
-import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
-import React from 'react'
-import { setCondition, selectSearchSlice } from '@/redux/slices/searchSlice'
-import { useDispatch, useSelector } from 'react-redux'
 import { use } from '@/components/arrays'
+import { selectSearchSlice, setCondition } from '@/redux/slices/searchSlice'
+import ChevronDownIcon from '@heroicons/react/24/solid/ChevronDownIcon'
+import { useDispatch, useSelector } from 'react-redux'
 
 const NewAndUsed = () => {
 	const { condition } = useSelector(selectSearchSlice)

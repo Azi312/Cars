@@ -1,6 +1,6 @@
 export const carsNames = [
 	'BMW',
-	'Porshe',
+	'Porsche',
 	'Ferrari',
 	'McLaren',
 	'Lamborghini',

@@ -19,23 +19,18 @@ export interface Items {
 	images: string[]
 }
 
-type ItemsTypes = {
-	items: Items[]
+type SavedItems = {
 	savedItems: [] | Items[]
 }
 
-const initialState: ItemsTypes = {
-	items: [],
+const initialState: SavedItems = {
 	savedItems: [],
 }
 
-export const itemsSlice = createSlice({
-	name: 'items',
+export const saveItemsSlice = createSlice({
+	name: 'savedItems',
 	initialState,
 	reducers: {
-		setItems(state, action) {
-			state.items = action.payload
-		},
 		setSavedItems(state, action) {
 			state.savedItems = action.payload
 		},
@@ -50,11 +45,7 @@ export const itemsSlice = createSlice({
 	},
 })
 
-export const selectItemsSlice = (state: RootState) => state.items
-export const {
-	setItems,
-	setSavedItems,
-	removeSavedItems,
-	removeAllSavedItems,
-} = itemsSlice.actions
-export default itemsSlice.reducer
+export const selectItemsSlice = (state: RootState) => state.savedItems
+export const { setSavedItems, removeSavedItems, removeAllSavedItems } =
+	saveItemsSlice.actions
+export default saveItemsSlice.reducer
