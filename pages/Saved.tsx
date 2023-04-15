@@ -24,7 +24,7 @@ const Saved = () => {
 
 		try {
 			const { data } = await axios.get(
-				`http://localhost:3001/savedItems?_sort=${sortById}&_order=${order}`
+				`https://my-json-server.typicode.com/Azi312/back-for-Cars/savedItems?_sort=${sortById}&_order=${order}`
 			)
 			dispatch(setSavedItems(data))
 		} catch (error) {

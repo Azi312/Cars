@@ -19,7 +19,9 @@ export const getServerSideProps = async (context: any) => {
 	const id = context.params.id
 	// const { id } = context.query
 
-	const res = await axios.get(`http://localhost:3001/items/${id}`)
+	const res = await axios.get(
+		`https://my-json-server.typicode.com/Azi312/back-for-Cars/items/${id}`
+	)
 	const data = await res.data
 
 	return { props: { items: data } }

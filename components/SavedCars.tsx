@@ -31,7 +31,9 @@ const SavedCars: FC<SavedCarsProps> = ({
 
 	const removeSavedCar = () => {
 		if (window.confirm('Are you sure, you want to remove?')) {
-			axios.delete(`http://localhost:3001/savedItems/${id}`)
+			axios.delete(
+				`https://my-json-server.typicode.com/Azi312/back-for-Cars/savedItems/${id}`
+			)
 			dispatch(removeSavedItems(id))
 		}
 	}

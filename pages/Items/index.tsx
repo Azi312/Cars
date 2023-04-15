@@ -6,7 +6,9 @@ import Cars from '@/components/Cars'
 import Sidebar from '@/components/Sidebar'
 
 export async function getServerSideProps() {
-	const res = await axios.get(`http://localhost:3001/items`)
+	const res = await axios.get(
+		`https://my-json-server.typicode.com/Azi312/back-for-Cars/items`
+	)
 	const data = await res.data
 
 	return { props: { items: data } }

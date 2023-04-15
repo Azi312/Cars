@@ -4,7 +4,7 @@ import { Items, Params } from './types'
 export const allCars = createApi({
 	reducerPath: 'allCars',
 	baseQuery: fetchBaseQuery({
-		baseUrl: 'http://localhost:3001',
+		baseUrl: 'https://my-json-server.typicode.com/Azi312/back-for-Cars',
 	}),
 	endpoints: build => ({
 		getItems: build.query<Items[], Params>({
