@@ -45,23 +45,26 @@ const CarInfo: FC<CarInfoProps> = ({ items }) => {
 
 	const saveCar = (e: any) => {
 		e.preventDefault()
-		axios.post('http://localhost:3001/savedItems', {
-			id,
-			name,
-			model,
-			year,
-			mileage,
-			condition,
-			location,
-			color,
-			interiorColor,
-			fuelType,
-			transmission,
-			steeringWheel,
-			engineCapacity,
-			price,
-			images,
-		})
+		axios.post(
+			'https://my-json-server.typicode.com/Azi312/back-for-Cars/savedItems',
+			{
+				id,
+				name,
+				model,
+				year,
+				mileage,
+				condition,
+				location,
+				color,
+				interiorColor,
+				fuelType,
+				transmission,
+				steeringWheel,
+				engineCapacity,
+				price,
+				images,
+			}
+		)
 	}
 
 	const { savedItems } = useSelector(selectItemsSlice)
